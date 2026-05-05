@@ -24,12 +24,15 @@ namespace WepApi_Day1.Infrastructure.Repository
 
         }
 
-        public void DeleteCourse(int id)
-        {
-            _context.Courses.Remove(_context.Courses.FirstOrDefault(c => c.Id == id));
-            _context.SaveChanges();
+       public void DeleteCourse(int id)
 
-        }
+ {
+     var course = _context.Courses.FirstOrDefault(c => c.Id == id);
+     
+         _context.Courses.Remove(course);
+         _context.SaveChanges();
+     
+ }
 
         public IEnumerable<Course> GetAllCourses()
         {
