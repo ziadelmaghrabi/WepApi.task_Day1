@@ -59,7 +59,7 @@ namespace WepApi_Day1.Controllers
             if (existingCourse == null)
                 return NotFound();//404
             _courseRepository.UpdateCourse(course.Id, course);
-            return Ok(course);
+            return NoContent();   //204
 
         }
        
