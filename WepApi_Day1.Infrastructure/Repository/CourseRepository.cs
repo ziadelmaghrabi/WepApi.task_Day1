@@ -51,18 +51,21 @@ namespace WepApi_Day1.Infrastructure.Repository
 
         }
 
-        public bool UpdateCourse(int id, Course course)
-        {
-            var existingCourse = _context.Courses.Find(id);
+    
+     public bool UpdateCourse(int id, Course course)
+{
+    var existingCourse = _context.Courses.Find(id);
 
-            if (existingCourse == null)
-                return false;
+    if (existingCourse == null)
+        return false;
 
-            existingCourse.Crs_Name = course.Crs_Name;
+    existingCourse.Crs_Name = course.Crs_Name;
+    existingCourse.Crs_Description = course.Crs_Description;
+    existingCourse.Duration = course.Duration;
 
-            _context.SaveChanges();
+    _context.SaveChanges();
 
-            return true;
-        }
+    return true;
+}
     }
 }
