@@ -49,7 +49,7 @@ namespace WepApi_Day1.Controllers
                 return BadRequest();
 
             _courseRepository.AddCourse(course);
-            return Ok(course);
+            return Created();   //202
         }
 
         [HttpPut("{id:int}")]
